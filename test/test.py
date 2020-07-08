@@ -31,3 +31,9 @@ def test_get_swapped_words():
     swap_words = squat.get_swapped_words()
     logging.info(f"Swap words: {swap_words}")
     assert swap_words == "nmap-python"
+
+def test_delimiter_deletion():
+    squat = OSSquat(package_name="python-nmap")
+    delimiter_del = squat.delimiter_deletion()
+    logging.info(f"Delimter deletion: {delimiter_del}")
+    assert delimiter_del == "pythonnmap"

@@ -30,6 +30,11 @@ class OSSquat:
                 words = self.package_name.split(delimiter)
                 return words[1] + delimiter + words[0]
 
+    def delimiter_deletion(self):
+        for delimiter in constants.pypi_delimiters:
+            if delimiter in self.package_name:
+                return self.package_name.replace(delimiter, "")
+
     def has_common_typos(self):
         pass
 
