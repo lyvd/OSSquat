@@ -32,8 +32,20 @@ def test_get_swapped_words():
     logging.info(f"Swap words: {swap_words}")
     assert swap_words == "nmap-python"
 
+def test_get_swapped_words_import_mysql():
+    squat = OSSquat(package_name="import-mysql")
+    swap_words = squat.get_swapped_words()
+    logging.info(f"Swap words: {swap_words}")
+    assert swap_words == "mysql-import"
+
 def test_delimiter_deletion():
     squat = OSSquat(package_name="python-nmap")
     delimiter_del = squat.delimiter_deletion()
     logging.info(f"Delimter deletion: {delimiter_del}")
     assert delimiter_del == "pythonnmap"
+
+def test_delimiter_deletion():
+    squat = OSSquat(package_name="pyymal")
+    permutations = squat.characters_permutation()
+    logging.info(f"Number of permutation: {len(permutations)}; First permutation: {permutations[0]}")
+    assert ("pyyaml" in  permutations)

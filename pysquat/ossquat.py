@@ -8,6 +8,7 @@ Hu, Yangyu, Haoyu Wang, Ren He, Li Li, Gareth Tyson, Ignacio Castro, Yao Guo, Le
 """
 from itertools import groupby
 import constants
+from itertools import permutations
 
 
 class OSSquat:
@@ -35,8 +36,10 @@ class OSSquat:
             if delimiter in self.package_name:
                 return self.package_name.replace(delimiter, "")
 
+    def characters_permutation(self):
+        perms = set([''.join(p) for p in permutations(self.package_name)])
+        return list(perms)
+
     def has_common_typos(self):
         pass
-
-
 
