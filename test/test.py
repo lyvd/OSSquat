@@ -25,3 +25,9 @@ def test_get_repeated_characters_different_characters():
     logging.info(f"""repeated characters: {repeated_chars[1][0]}, number of occurences: {repeated_chars[1][1]}""")
     assert repeated_chars[1][0] == 'i'
     assert repeated_chars[1][1] == 2
+
+def test_get_swapped_words():
+    squat = OSSquat(package_name="python-nmap")
+    swap_words = squat.get_swapped_words()
+    logging.info(f"Swap words: {swap_words}")
+    assert swap_words == "nmap-python"

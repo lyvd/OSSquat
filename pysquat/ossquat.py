@@ -7,6 +7,7 @@ Hu, Yangyu, Haoyu Wang, Ren He, Li Li, Gareth Tyson, Ignacio Castro, Yao Guo, Le
 "Mobile app squatting." In Proceedings of The Web Conference 2020, pp. 1727-1738. 2020.
 """
 from itertools import groupby
+import constants
 
 
 class OSSquat:
@@ -23,8 +24,11 @@ class OSSquat:
     def has_swapped_characters(self):
         pass
 
-    def has_swapped_words(self):
-        pass
+    def get_swapped_words(self):
+        for delimiter in constants.pypi_delimiters:
+            if delimiter in self.package_name:
+                words = self.package_name.split(delimiter)
+                return words[1] + delimiter + words[0]
 
     def has_common_typos(self):
         pass
